@@ -15,7 +15,7 @@ class BaseError extends Error {
 
 		super(message);
 
-        this.reference = uuid.v4();
+		this.reference = uuid.v4();
 
 		Object.defineProperty(this, 'type', {
 			value: this.constructor.name
