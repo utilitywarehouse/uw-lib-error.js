@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "uuid": "^3.0.1"
+  },
+  "scripts": {
+    "test": "make test",
+    "lint": "make lint"
   }
 }
