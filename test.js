@@ -92,4 +92,24 @@ describe('uw-lib-error.js', function() {
 
 		expect(()=>new My('msg', 'not-an-error')).to.throw(/instance of Error/);
 	})
+
+	it('adds unique reference uuid to each instance of an error', function() {
+		const My = error('My');
+
+		const error1 = new My();
+        const error2 = new My();
+
+        expect(error1).to.have.property('reference');
+        expect(error2).to.have.property('reference');
+        expect(error1.reference).to.not.equal(error2.reference);
+
+        class MyError extends error.BaseError {};
+
+        const error3 = new MyError();
+        const error4 = new MyError();
+
+        expect(error3).to.have.property('reference');
+        expect(error4).to.have.property('reference');
+        expect(error3.reference).to.not.equal(error4.reference);
+	})
 })

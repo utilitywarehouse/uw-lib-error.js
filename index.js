@@ -1,3 +1,5 @@
+const uuid = require('uuid');
+
 // credit: https://gist.github.com/justmoon/15511f92e5216fa2624b
 
 class BaseError extends Error {
@@ -12,6 +14,8 @@ class BaseError extends Error {
 		}
 
 		super(message);
+
+        this.reference = uuid.v4();
 
 		Object.defineProperty(this, 'type', {
 			value: this.constructor.name
