@@ -6,7 +6,7 @@ class BaseError extends Error {
 	constructor(message, previous) {
 		if (message instanceof Error) {
 			previous = message;
-			message = null;
+			message = undefined;
 		}
 
 		if (previous && !(previous instanceof Error)) {
