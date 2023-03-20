@@ -1,6 +1,6 @@
 {
   "name": "@utilitywarehouse/uw-lib-error.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom Error factory.",
   "main": "index.js",
   "repository": "git@github.com:utilitywarehouse/uw-lib-error.js.git",
